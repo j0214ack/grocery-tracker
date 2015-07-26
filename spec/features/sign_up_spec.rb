@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 feature 'User signs up' do
   scenario 'anonymous user visits homepage' do
     fill_in_sign_up_form
