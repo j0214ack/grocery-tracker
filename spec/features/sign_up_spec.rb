@@ -2,6 +2,8 @@ require 'rails_helper'
 
 feature 'User signs up' do
   scenario 'anonymous user visits homepage' do
+    visit root_path
+    
     fill_in_sign_up_form
     click_sign_up_button
 

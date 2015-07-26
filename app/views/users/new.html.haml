@@ -1,3 +1,14 @@
-= form_for(@user) do
+= form_for(@user) do |f|
   = f.label :email, 'Email Address'
   = f.email_field :email
+
+  = f.label :name, 'Name'
+  = f.text_field :name
+
+  = f.label :password, "Password"
+  = f.password_field :password
+
+  = f.label :password_confirmation, "Password Confirmation"
+  = f.password_field :password_confirmation
+
+  = f.submit 'Sign Up'
