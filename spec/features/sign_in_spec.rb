@@ -10,7 +10,7 @@ feature 'user signs in' do
     fill_in_sign_in_form(user)
     click_sign_in_button
 
-    expect_sign_in_success
+    expect_sign_in_success(user)
     expect_showing_user_grocery_list
   end
 
@@ -27,8 +27,9 @@ feature 'user signs in' do
     click_on 'Sign In'
   end
 
-  def expect_sign_in_success
-    expect(page).to have_text "Signed In!"
+  def expect_sign_in_success(user)
+    expect(page).to have_text "Welcome"
+    expect(page).to have_text user.name
   end
 
   def expect_showing_user_grocery_list
