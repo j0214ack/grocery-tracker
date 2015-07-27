@@ -1,10 +1,21 @@
 require 'rails_helper'
+require 'supports/macros'
 
 describe SessionsController do
   describe "GET new" do
     context 'when user already signed in' do
-      it "redirects to user's grocery list page"
-      it "shows a flash error message"
+      before do
+        login_user
+        get :new
+      end
+
+      it "redirects to user's grocery list page" do
+        expect(response).to redirect_to groceries_path
+      end
+
+      it "shows a flash error message" do
+        expect(flash[:error]).to be_present
+      end
     end
 
     context 'when user not signed in' do
