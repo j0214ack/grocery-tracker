@@ -15,7 +15,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
-  gem 'rb-readline'
   gem 'guard-rspec', require: false
 end
 
@@ -30,6 +29,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'rspec-rails'
+  gem 'rb-readline'
   gem 'pry'
   gem 'fabrication'
   gem 'faker'
