@@ -28,9 +28,8 @@ end
 group :development, :test do
   gem 'spring'
 
+  gem 'byebug'
   gem 'rspec-rails'
-  gem 'rb-readline'
-  gem 'pry'
   gem 'fabrication'
   gem 'faker'
   gem 'launchy'
