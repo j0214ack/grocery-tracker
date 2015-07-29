@@ -1,1 +1,12 @@
 %h1 My Grocery List
+%ul
+  - @groceries.each do |grocery|
+    %li
+      %p= link_to grocery.name, edit_grocery_path(grocery)
+      %p= grocery.quantity
+      %p= grocery.show_exp_date
+      %p= link_to 'delete', grocery_path(grocery),
+                            method: 'delete',
+                            id: "delete_grocery_#{grocery.id}",
+                            data: { confirm: "Are you sure?"}
+  = link_to '+ Add Item', new_grocery_path

@@ -1,0 +1,19 @@
+= form_for(@grocery) do |f|
+  - if @grocery.new_record?
+    = f.label :name, 'Item Name:'
+    = f.text_field :name
+    %br
+  = f.label :count, 'Count:'
+  = f.text_field :count
+  = f.label :unit, 'Unit:'
+  = f.text_field :unit
+  %br
+  - if @grocery.new_record?
+    = f.label :exp_date, 'Exp. Date:'
+    = f.text_field :exp_date
+    %br
+
+  - if @grocery.new_record?
+    = f.submit '+ Add Item'
+  - else
+    = f.submit 'Update'

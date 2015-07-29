@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'Signed Up!'
+      session[:user_id] = @user.id
       redirect_to groceries_path
     else
       render :new
