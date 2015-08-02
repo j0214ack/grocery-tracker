@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :require_logged_out
+
   def new
     @user = User.new
   end
@@ -11,6 +13,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to groceries_path
     else
+      flash[:error] = "You've provided with invalid information."
       render :new
     end
   end

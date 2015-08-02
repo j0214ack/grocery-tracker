@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def require_logged_out
+    if logged_in?
+      flash[:error] = "You've already signed in."
+      redirect_to groceries_path
+    end
+  end
 end
